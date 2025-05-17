@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build outputs
+out/
+dist/
+
+# VS Code Extension Package
+*.vsix
+
+# IDE specific files
+.vscode-test/
+.DS_Store
