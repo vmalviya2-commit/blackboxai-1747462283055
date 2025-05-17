@@ -1,0 +1,46 @@
+{
+  "name": "cicsia-vscode-extension-for-zowe",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/cicsia-vscode-extension-for-zowe/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/cicsia-vscode-extension-for-zowe",
+        "commands": [
+          "webpack --mode production --config webpack.config.js"
+        ]
+      }
+    },
+    "watch": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/cicsia-vscode-extension-for-zowe",
+        "commands": [
+          "webpack --watch --config webpack.config.js"
+        ]
+      }
+    },
+    "package": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/cicsia-vscode-extension-for-zowe",
+        "commands": [
+          "vsce package"
+        ],
+        "dependsOn": [
+          {
+            "target": "build",
+            "projects": "self"
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": []
+}
