@@ -9,7 +9,10 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:cicsia-vscode-extension-for-zowe.helloWorld",
+    "onCommand:cicsia-vscode-extension-for-zowe.showInfo"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
